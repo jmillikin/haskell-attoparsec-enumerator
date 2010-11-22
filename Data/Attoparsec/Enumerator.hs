@@ -35,7 +35,7 @@ instance Exception ParseError
 iterParser :: Monad m => A.Parser a -> E.Iteratee B.ByteString m a
 iterParser p = E.continue (step (A.parse p)) where
 	step parse (E.Chunks xs) = parseLoop parse xs
-	step parse E.EOF = case parse B.empty of
+	step parse E.EOF = case A.feed (parse B.empty) B.empty of
 		A.Done extra a -> E.yield a $ if B.null extra
 			then E.Chunks []
 			else E.Chunks [extra]
