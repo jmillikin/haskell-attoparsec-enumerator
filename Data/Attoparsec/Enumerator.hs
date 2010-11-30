@@ -34,7 +34,7 @@ instance Exception ParseError
 -- If parsing fails, the iteratee's error value will contain a 'ParseError'.
 iterParser :: Monad m => A.Parser a -> E.Iteratee B.ByteString m a
 iterParser p = E.continue (step (A.parse p)) where
-	step parse (E.Chunks xs) = parseLoop parse xs
+	step parse (E.Chunks xs) = parseLoop parse (notEmpty xs)
 	step parse E.EOF = case A.feed (parse B.empty) B.empty of
 		A.Done extra a -> E.yield a $ if B.null extra
 			then E.Chunks []
@@ -51,3 +51,4 @@ iterParser p = E.continue (step (A.parse p)) where
 		A.Fail _ ctx msg -> err ctx msg
 	
 	err ctx msg = E.throwError (ParseError ctx msg)
+	notEmpty = filter (not . B.null)
