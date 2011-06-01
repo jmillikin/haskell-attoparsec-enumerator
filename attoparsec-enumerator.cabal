@@ -1,5 +1,5 @@
 name: attoparsec-enumerator
-version: 0.2.0.3
+version: 0.2.0.4
 synopsis: Convert an Attoparsec parser into an iteratee
 license: MIT
 license-file: license.txt
@@ -27,7 +27,7 @@ library
 
   build-depends:
       base >= 3 && < 5
-    , attoparsec >= 0.8 && < 0.9
+    , attoparsec >= 0.8 && < 0.10
     , bytestring >= 0.9 && < 0.10
     , enumerator >= 0.4 && < 0.5
 
