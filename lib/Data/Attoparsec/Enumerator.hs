@@ -31,7 +31,8 @@ instance Exception ParseError
 -- | Convert an Attoparsec 'A.Parser' into an 'E.Iteratee'. The parser will
 -- be streamed bytes until it returns 'A.Done' or 'A.Fail'.
 --
--- If parsing fails, the iteratee's error value will contain a 'ParseError'.
+-- If parsing fails, a 'ParseError' will be thrown with 'E.throwError'. Use
+-- 'E.catchError' to catch it.
 iterParser :: Monad m => A.Parser a -> E.Iteratee B.ByteString m a
 iterParser p = E.continue (step (A.parse p)) where
 	step parse (E.Chunks xs) = parseLoop parse (notEmpty xs)

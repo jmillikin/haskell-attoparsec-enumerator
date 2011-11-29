@@ -17,8 +17,8 @@ description:
   from an enumerator. This could be used for parsing large files, or
   implementing binary network protocols.
   .
-  > {-# LANGUAGE OverloadedStrings #-}
-  > 
+  > (-# LANGUAGE OverloadedStrings #-)
+  >
   > import Control.Applicative
   > import Data.Attoparsec
   > import Data.Attoparsec.Enumerator
@@ -26,9 +26,9 @@ description:
   > import Data.Enumerator.Binary (enumHandle)
   > import Data.Enumerator.List
   > import System.IO
-  > 
+  >
   > parser = string "foo" <|> string "bar"
-  > 
+  >
   > main = do
   >     xy <- run_ (enumHandle 1 stdin $$ do
   >         x <- iterParser parser
