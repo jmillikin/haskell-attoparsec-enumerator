@@ -1,5 +1,5 @@
 name: attoparsec-enumerator
-version: 0.2.0.4
+version: 0.2.0.5
 synopsis: Convert an Attoparsec parser into an iteratee
 license: MIT
 license-file: license.txt
@@ -21,7 +21,7 @@ source-repository head
 source-repository this
   type: bazaar
   location: https://john-millikin.com/branches/attoparsec-enumerator/0.2/
-  tag: attoparsec-enumerator_0.2.0.4
+  tag: attoparsec-enumerator_0.2.0.5
 
 library
   ghc-options: -Wall
