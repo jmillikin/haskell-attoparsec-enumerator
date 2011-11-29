@@ -1,4 +1,5 @@
------------------------------------------------------------------------------
+{-# LANGUAGE DeriveDataTypeable #-}
+
 -- |
 -- Module: Data.Attoparsec.Enumerator
 -- Copyright: 2010 John Millikin
@@ -6,17 +7,16 @@
 --
 -- Maintainer: jmillikin@gmail.com
 -- Portability: portable
---
------------------------------------------------------------------------------
-{-# LANGUAGE DeriveDataTypeable #-}
 module Data.Attoparsec.Enumerator
 	( ParseError (..)
 	, iterParser
 	) where
-import Control.Exception (Exception)
-import Data.Typeable (Typeable)
-import qualified Data.Attoparsec as A
+
+import           Control.Exception (Exception)
+import           Data.Typeable (Typeable)
 import qualified Data.ByteString as B
+
+import qualified Data.Attoparsec as A
 import qualified Data.Enumerator as E
 
 -- | The context and message from a 'A.Fail' value.
