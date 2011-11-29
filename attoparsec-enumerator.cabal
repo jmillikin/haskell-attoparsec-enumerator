@@ -11,12 +11,17 @@ cabal-version: >=1.6
 category: Text, Parsing, Enumerator
 stability: experimental
 bug-reports: mailto:jmillikin@gmail.com
-homepage: http://john-millikin.com/software/attoparsec-enumerator/
+homepage: https://john-millikin.com/software/attoparsec-enumerator/
 tested-with: GHC==6.12.1
 
 source-repository head
   type: bazaar
-  location: http://john-millikin.com/software/attoparsec-enumerator/
+  location: https://john-millikin.com/branches/attoparsec-enumerator/0.2/
+
+source-repository this
+  type: bazaar
+  location: https://john-millikin.com/branches/attoparsec-enumerator/0.2/
+  tag: attoparsec-enumerator_0.2.0.4
 
 library
   ghc-options: -Wall
