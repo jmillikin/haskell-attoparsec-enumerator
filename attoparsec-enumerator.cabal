@@ -38,12 +38,12 @@ description:
 
 
 source-repository head
-  type: bazaar
-  location: https://john-millikin.com/branches/attoparsec-enumerator/0.3/
+  type: git
+  location: https://john-millikin.com/code/attoparsec-enumerator/
 
 source-repository this
-  type: bazaar
-  location: https://john-millikin.com/branches/attoparsec-enumerator/0.3/
+  type: git
+  location: https://john-millikin.com/code/attoparsec-enumerator/
   tag: attoparsec-enumerator_0.3.1
 
 library
